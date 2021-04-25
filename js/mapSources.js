@@ -12,6 +12,14 @@ const sources = {
         type:'geojson',
         data:'https://arcgis.dvrpc.org/portal/rest/services/Imagery/DVRPC_1965_1995_index/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson'  
       },
+    'indexPA':{
+        type:'geojson',
+        data:'https://arcgis.dvrpc.org/portal/rest/services/Imagery/DVRPC_PA_SP_index/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson'  
+      },
+    'indexNJ':{
+        type:'geojson',
+        data:'https://arcgis.dvrpc.org/portal/rest/services/Imagery/DVRPC_NJ_SP_index/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson'  
+      },
     'nearmap': {
         'type': 'raster',
         // use the tiles option to specify a WMS tile source URL

@@ -33,7 +33,7 @@ const layers = {
          "visibility":"none",
           },
         paint: {
-          // 'fill-outline-color': '#f7c59f',
+           'fill-outline-color': '#FFF',
            'fill-color': 'rgba(255,165,0,0.35)'
         }   
     },
@@ -42,11 +42,35 @@ const layers = {
         type: 'fill',
         source: 'index65_95',
         layout: {
-         "visibility":"visible",
+         "visibility":"none",
           },
         paint: {
-          // 'fill-outline-color': '#f7c59f',
+           'fill-outline-color': '#FFF',
            'fill-color': 'rgba(115,0,115,0.35)'
+        }
+    },
+    indexPA:{
+        id: 'indexPA',
+        type: 'fill',
+        source: 'indexPA',
+        layout: {
+         "visibility":"none",
+          },
+        paint: {
+           'fill-outline-color': '#FFF',
+           'fill-color': 'rgba(40, 164, 40,0.35)'
+        }
+    },
+    indexNJ:{
+        id: 'indexNJ',
+        type: 'fill',
+        source: 'indexNJ',
+        layout: {
+         "visibility":"none",
+          },
+        paint: {
+           'fill-outline-color': '#FFF',
+           'fill-color': 'rgba(178, 0, 0,0.35)'
         }
     }
 

@@ -21,4 +21,5 @@ const filterLayers = values => {
 
     // return filter
 }
-export { toggleLayers, filterLayers}
+//export { toggleLayers, filterLayers}
+export {toggleLayers}
