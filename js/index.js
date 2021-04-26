@@ -26,6 +26,15 @@ map.on('load', () => {
         },
         'road-street'
     );
+     // Change the cursor to a pointer when the mouse is over the places layer.
+     map.on('mouseenter', 'index59', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'index59', function () {
+        map.getCanvas().style.cursor = '';
+    });
 
 })
 forms.forEach(form => toggleLayers(form, map))

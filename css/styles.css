@@ -166,12 +166,22 @@ nav {
 }
 .legend-item-box {
     display: inline-block;
-    height: 15px;
-    width: 15px;
+    height: 27px;
+    width: 27px;
     border-radius: 5px;
+    margin: 0px 0px 0px 10px;
 }
 #index59{
     background-color: rgba(255,165,0,1);
+}
+#index65{
+    background-color: rgba(115,0,115,1);
+}
+#indexPA{
+    background-color: rgba(40, 164, 40,1);
+}
+#indexNJ{
+    background-color: rgba(178, 0, 0,1);
 }
 /* END Sidebar */
 

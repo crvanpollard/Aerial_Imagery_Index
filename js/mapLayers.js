@@ -30,7 +30,7 @@ const layers = {
         type: 'fill',
         source: 'index1959',
         layout: {
-         "visibility":"none",
+         "visibility":"visible",
           },
         paint: {
            'fill-outline-color': '#FFF',
