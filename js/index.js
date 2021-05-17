@@ -2,8 +2,10 @@ import makeMap from './map.js'
 import sources from './mapSources.js'
 import layers from './mapLayers.js'
 import handleModal from './modal.js'
+import {remove_all_popups} from "./mapUtils.js";
 import { toggleLayers } from './forms.js'
 // add additional imports here (popups, forms, etc)
+import { bindPopup, hover_popup_meta, hover_keys, wire_index59_click} from "./popup.js";
 
 const modal = document.getElementById('modal')
 const modalToggle = document.getElementById('modal-toggle')
@@ -26,18 +28,34 @@ map.on('load', () => {
         },
         'road-street'
     );
-     // Change the cursor to a pointer when the mouse is over the places layer.
-     map.on('mouseenter', 'index59', function () {
-        map.getCanvas().style.cursor = 'pointer';
+   
+  // Wire all hover popups
+  for (var i = 0; i < hover_keys.length; i++) {
+    let this_key = hover_keys[i];
+
+    // change mouse tip to pointer finger
+    map.on(
+      "mouseenter",
+      this_key,
+      () => (map.getCanvas().style.cursor = "pointer")
+    );
+
+    map.on("click", this_key, function (e) {
+      remove_all_popups();
+      var msg = hover_popup_meta[this_key](e);
+      bindPopup(map, msg, e);
     });
 
-    // Change it back to a pointer when it leaves.
-    map.on('mouseleave', 'index59', function () {
-        map.getCanvas().style.cursor = '';
+    // change mouse tip upon leaving feature
+    map.on("mouseleave", this_key, function (e) {
+      map.getCanvas().style.cursor = "";
     });
+  }
 
+  // Wire click-based popups
+  wire_index59_click(map);
 })
-forms.forEach(form => toggleLayers(form, map))
 
+forms.forEach(form => toggleLayers(form, map))
 // modal
 handleModal(modal, modalToggle, closeModal)

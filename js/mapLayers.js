@@ -25,16 +25,32 @@ const layers = {
         }
     },
     // add more layers here
-    index1959:{
-        id: 'index1959',
+    index59:{
+        id: 'index59',
         type: 'fill',
-        source: 'index1959',
+        source: 'index59',
         layout: {
          "visibility":"visible",
           },
         paint: {
-           'fill-outline-color': '#FFF',
+         //  'fill-outline-color': '#FFF',
            'fill-color': 'rgba(255,165,0,0.35)'
+        }   
+    },
+    index59L:{
+        id: 'index59L',
+        type: 'line',
+        source: 'index59L',
+        layout: {
+         "visibility":"visible",
+          },
+        paint: {
+           'line-width': ['case',
+           ['boolean', ['feature-state', 'click'], false],
+            5,1 ],
+           'line-color': ['case',
+           ['boolean', ['feature-state', 'click'], false],
+            '#0f397d','#FFF', ]
         }   
     },
     index65_95:{
@@ -45,7 +61,10 @@ const layers = {
          "visibility":"none",
           },
         paint: {
-           'fill-outline-color': '#FFF',
+           'fill-outline-color': ['case',
+           ['boolean', ['feature-state', 'click'], false],
+            '#0f397d',
+            '#fff', ],
            'fill-color': 'rgba(115,0,115,0.35)'
         }
     },

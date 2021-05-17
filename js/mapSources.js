@@ -4,7 +4,11 @@ const sources = {
         url: 'https://tiles.dvrpc.org/data/dvrpc-municipal.json'
     },
     // add more sources here
-    'index1959':{
+    'index59':{
+      type:'geojson',
+      data:'https://arcgis.dvrpc.org/portal/rest/services/Imagery/DVRPC_1959_index/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson'  
+    },
+    'index59L':{
       type:'geojson',
       data:'https://arcgis.dvrpc.org/portal/rest/services/Imagery/DVRPC_1959_index/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson'  
     },
