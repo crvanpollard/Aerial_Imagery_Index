@@ -5,7 +5,7 @@ import handleModal from './modal.js'
 import {remove_all_popups} from "./mapUtils.js";
 import { toggleLayers } from './forms.js'
 // add additional imports here (popups, forms, etc)
-import { bindPopup, hover_popup_meta, hover_keys, wire_index59_click} from "./popup.js";
+import { bindPopup, hover_popup_meta, hover_keys, wire_index59_click, wire_index65_95_click} from "./popup.js";
 
 const modal = document.getElementById('modal')
 const modalToggle = document.getElementById('modal-toggle')
@@ -54,6 +54,7 @@ map.on('load', () => {
 
   // Wire click-based popups
   wire_index59_click(map);
+  wire_index65_95_click(map);
 })
 
 forms.forEach(form => toggleLayers(form, map))

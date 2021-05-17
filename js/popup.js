@@ -13,9 +13,15 @@ const index59_popup_msg = (e) => {
     var props = e.features[0].properties;
     return "<h2 id='index59pop'>1959 Sheet ID</h2><p>" + props.sheet_id  + "</p>";
   };
+const index65_95_popup_msg = (e) => {
+    var props = e.features[0].properties;
+    return "<h2 id='index65_95_pop'>1965-95 Sheet ID</h2><p>" + props.sheet_id  + "</p>";
+};
+
 
 const hover_popup_meta = {
     index59: index59_popup_msg,
+    index65_95: index65_95_popup_msg,
   };
   
 const hover_keys = Object.keys(hover_popup_meta);
@@ -42,7 +48,23 @@ const wire_index59_click = (map) => {
       });
     });
   };
+  const wire_index65_95_click = (map) => {
+    map.on("click", "index65_95", function (e) {
+        // added a remove feature state so that style gets reset
+      //  map.removeFeatureState({source: 'index65_95'});
+        // query feature selected and change feature state style defined in mapLayers.js
+        var features = map.queryRenderedFeatures(e.point, { layers: ['index65_95'] });
+            for (var i = 0; i < features.length; i++) {
+                map.setFeatureState({source: 'index65_95', id: features[i].id}, {click: true});
+            };
+      map.flyTo({
+        center: e.lngLat,
+        zoom: 12,
+        essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+      });
+    });
+  };
 
 //export { makePopup, makePopupContent }
 
-export { newPopup, bindPopup, hover_popup_meta, hover_keys, wire_index59_click};
+export { newPopup, bindPopup, hover_popup_meta, hover_keys, wire_index59_click, wire_index65_95_click};
