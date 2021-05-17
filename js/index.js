@@ -3,7 +3,7 @@ import sources from './mapSources.js'
 import layers from './mapLayers.js'
 import handleModal from './modal.js'
 import {remove_all_popups} from "./mapUtils.js";
-import { toggleLayers } from './forms.js'
+import { layer_names, toggleLayers } from './forms.js'
 // add additional imports here (popups, forms, etc)
 import { bindPopup, hover_popup_meta, hover_keys, wire_index59_click, wire_index65_95_click} from "./popup.js";
 
@@ -18,6 +18,7 @@ const map = makeMap()
 map.on('load', () => {
     for(const source in sources) map.addSource(source, sources[source])
     for(const layer in layers) map.addLayer(layers[layer])
+
     // add map events here (click, mousemove, etc)
     map.addLayer(
         {

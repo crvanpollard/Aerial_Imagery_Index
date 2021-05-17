@@ -7,5 +7,4 @@
       existingPopup[0].remove();
     }
   };
-  
-  export {remove_all_popups,};
+  export {remove_all_popups};
