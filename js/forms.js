@@ -4,7 +4,7 @@ const layering_groups = {
   1959: {
     layer_ids: ["index59", "index59L"],
   },
-  "19665_95": {
+  1965: {
     layer_ids: ["index65_95"],
   },
   PA: {
